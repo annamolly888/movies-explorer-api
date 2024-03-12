@@ -1,7 +1,8 @@
 const allowedCors = [
     'http://localhost:3000',
     'https://localhost:3000',
-    //добавить фронт
+    'http://movies.annamolly888.nomoredomainswork.ru',
+    'https://movies.annamolly888.nomoredomainswork.ru',
   ];
   
   const cors = (req, res, next) => {
