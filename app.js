@@ -13,6 +13,11 @@ const { cors } = require('./middlewares/cors');
 
 const app = express();
 app.use(express.json());
+app.use((req, res, next) => {
+  console.log(`Received ${req.method} request to ${req.originalUrl}`);
+  next();
+});
+
 app.use(cors);
 
 app.use(helmet());
