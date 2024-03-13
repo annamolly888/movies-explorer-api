@@ -1,8 +1,8 @@
 const allowedCors = [
-  'http://localhost:3000',
-  'https://localhost:3000',
   'http://movies.annamolly888.nomoredomainswork.ru',
   'https://movies.annamolly888.nomoredomainswork.ru',
+  'http://localhost:3000',
+  'https://localhost:3000',
 ];
 
 const cors = (req, res, next) => {
@@ -18,6 +18,7 @@ const cors = (req, res, next) => {
 
     if (method === 'OPTIONS') {
       res.header('Access-Control-Allow-Methods', DEFAULT_ALLOWED_METHODS);
+      res.header('Access-Control-Allow-Headers', requestHeaders);
       res.header('Access-Control-Max-Age', 3600);
       return res.status(200).send();
     }
