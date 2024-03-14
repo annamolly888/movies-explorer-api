@@ -18,6 +18,11 @@ app.use((req, res, next) => {
   next();
 });
 
+process.on('unhandledRejection', (reason, promise) => {
+  console.log('Unhandled Rejection at:', promise, 'reason:', reason);
+  // Здесь можно добавить свой код для обработки ошибок
+});
+
 app.use(cors);
 
 app.use(helmet());
